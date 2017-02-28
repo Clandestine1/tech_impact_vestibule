@@ -30,7 +30,7 @@ function draw() {
 
   for (var q = 0; q < rotation.length; q++) {
     push();
-    translate(width*0.5, height*0.5); //need to change later to adjust location on canvas
+    translate(width*0.5, height*0.5); //sets location of rotating star on canvas based on width / height
     rotate(frameCount / 100.0);
     rotation[q].star(0, 0, 50, 80, 20);
     pop();
@@ -210,13 +210,13 @@ function RotateFlower(x, y, radius1, radius2, npoints) {
     fill('#ff8c42');
     strokeWeight(1);
     //draws 4 main petals to rotate
-    ellipse(this.z, this.z, this.y, this.y);
+    ellipse(this.z, this.z, this.y, this.y); //one day want to try and make petals rotate, that's why they're here lol
     ellipse(this.w, this.z, this.y, this.y);
     ellipse(this.z, this.w, this.y, this.y);
     ellipse(this.w, this.w, this.y, this.y);
   }
 
-  this.star = function(x, y, radius1, radius2, npoints) { //need to change later! back to the petals
+  this.star = function(x, y, radius1, radius2, npoints) { //rotating star (found math online)
     noStroke();
     fill('#ff8c42');
 
@@ -234,7 +234,3 @@ function RotateFlower(x, y, radius1, radius2, npoints) {
     endShape(CLOSE);
   }
 }
-
-
-
-
